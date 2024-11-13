@@ -85,7 +85,9 @@ const App: React.FC = () => {
       const priorityOrder = ['high', 'medium', 'low']; // Priority array for sorting
       return priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority);
     } else if (sortBy === 'completed') {
-      return Number(a.completed) - Number(b.completed); // false (0) -> true (1)
+      // Sorting by completed: false (incomplete) should come first
+      // False (0) comes before True (1)
+      return a.completed === b.completed ? 0 : a.completed ? 1 : -1;
     } else if (sortBy === 'title') {
       return a.title.localeCompare(b.title);
     }
@@ -117,4 +119,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
