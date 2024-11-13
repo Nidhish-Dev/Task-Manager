@@ -16,18 +16,20 @@ interface Task {
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete, onToggleCompletion }) => {
   return (
-    <div>
+    <div className="task-list-container">
       {tasks.length === 0 ? (
         <p>No tasks available</p>
       ) : (
-        tasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onDelete={onDelete}
-            onToggleCompletion={onToggleCompletion}
-          />
-        ))
+        <div className="task-list">
+          {tasks.map((task) => (
+            <Task
+              key={task.id}
+              task={task}
+              onDelete={onDelete}
+              onToggleCompletion={onToggleCompletion}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

@@ -96,7 +96,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Task Manager</h1>
+      <h1 className='text-lg font-medium'>Task Manager</h1>
       <input
         type="text"
         placeholder="Search tasks..."

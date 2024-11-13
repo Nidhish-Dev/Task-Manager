@@ -32,7 +32,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='flex gap-5' onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Task Title"
@@ -44,7 +44,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <button type="submit">Add Task</button>
+      <button className='addtaskbtn' type="submit">Add Task</button>
     </form>
   );
 };
